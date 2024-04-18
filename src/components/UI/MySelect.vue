@@ -3,8 +3,8 @@
     <option disabled value="">Выберите из списка</option>
     <option
         v-for="option in options"
-        :key="options.value"
-        :value="options.value"
+        :key="option.value"
+        :value="option.value"
     >
       {{ option.name }}
     </option>
@@ -25,7 +25,8 @@ export default {
   },
   methods: {
     changeOptions(event) {
-      this.$emit('update:modelValue:', event.target.value)
+      console.log(event.target.value)
+      this.$emit('update:modelValue', event.target.value)
     }
   }
 }
